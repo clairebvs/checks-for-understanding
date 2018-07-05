@@ -1,6 +1,6 @@
 ## Week Two - Module 2 Recap
 
-Fork or re-pull this respository. Answer the questions to the best of your ability. Try to answer them with limited amount of external research. These questions cover the majority of what we've learned this week (which is a TON - YOU are a web developer!!!). 
+Fork or re-pull this respository. Answer the questions to the best of your ability. Try to answer them with limited amount of external research. These questions cover the majority of what we've learned this week (which is a TON - YOU are a web developer!!!).
 
 Note: When you're done, submit a PR.
 
@@ -8,6 +8,7 @@ Note: When you're done, submit a PR.
 ### Week 2 Questions
 
 1. At a high level, what is ActiveRecord? What does it do/allow you to do?
+ActiveRecord is an ORM (Object Relational Mapping) that allows us to "talk" to our database to query it (through SQL but not using it directly).
 2. Assume you have the following model:
 
 ```ruby
@@ -16,8 +17,14 @@ end
 ```
 
 What are some methods you can call on `Team`? If these methods aren't defined in the class, how do you have access to them?
+The methods we can call on Team are find, where, order, all, select, join, includes ... We have access to those methods through inheritance ActiveRecord::Base.
+
 
 3. Assume that in your database, a team has the following attributes: "id", "name", owner_id". How would you find the name of a team with an id of 4? Assuming your class only included the code from question 2, how could you find the owner of the same team?
+
+team = Team.find(id: 4)
+Team.find(owner_id: team)
+
 
 4. Assume that you added a line to your `Team` class as follows:
 
@@ -28,8 +35,16 @@ end
 ```
 
 Now how would you find the owner of the team with an id of 4?
+Team.find(id: 4).owner_id
 
 5. In a database that's holding students and teachers, what will be the relationship between students and teachers? Draw the schema diagram.
+
+Many to many relationship.
+Students have many teachers.
+Teachers have many students.
+
+Set up table students, teachers AND join one ?
+
 6. Define foreign key, primary key, and schema.
 7. Describe the relationship between a foreign key on one table and a primary key on another table.
 8. What are the parts of an HTTP response?
@@ -51,7 +66,7 @@ Now how would you find the owner of the team with an id of 4?
 Choose One:
 * I was able to answer every question without relying on outside resources
 * I was able to answer most questions independently, but utilized outside resources for a few
-* I was able to answer a few questions independently, but relied heavily on outside resources 
+* I was able to answer a few questions independently, but relied heavily on outside resources
 
 Choose One:
 * I feel confident about the content presented this week
