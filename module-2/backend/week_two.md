@@ -17,7 +17,8 @@ end
 ```
 
 What are some methods you can call on `Team`? If these methods aren't defined in the class, how do you have access to them?
-The methods we can call on Team are find, where, order, all, select, join, includes ... We have access to those methods through inheritance ActiveRecord::Base.
+
+The methods we can call on Team are find, where, order, all, select, join, includes ... We have access to those methods through inheritance (ActiveRecord::Base).
 
 
 3. Assume that in your database, a team has the following attributes: "id", "name", owner_id". How would you find the name of a team with an id of 4? Assuming your class only included the code from question 2, how could you find the owner of the same team?
@@ -43,12 +44,18 @@ Many to many relationship.
 Students have many teachers.
 Teachers have many students.
 
-Set up table students, teachers AND join one ?
+Students        Student_Teachers      Teachers
+Name            Student_id            Full Name
+Module          Teacher_id            Class
 
 6. Define foreign key, primary key, and schema.
+A primary key is the id of a table itself. A primary key is unique. A foreign key is the id of a table within another table because of a relationships (belongs_to) to link them. A schema is the representation of the table (we can see the name of the tables and the columns).
 7. Describe the relationship between a foreign key on one table and a primary key on another table.
+As said above, the foreign key references the primary key of another table.
 8. What are the parts of an HTTP response?
-
+A status
+a header and
+a body(optional)
 
 ### Optional Questions
 
@@ -59,17 +66,20 @@ Set up table students, teachers AND join one ?
 5. In the same database, what will you need to do to create this relationship (draw a schema diagram)?
 6. Give an example of when you might want to store information besides ids on a join table.
 7. Describe and diagram the relationship between patients and doctors.
+
 8. Describe and diagram the relationship between museums and original_paintings.
+
 9. What could you see in your code that would make you think you might want to create a partial?
+
+HTML code that is the same in several files (edit, show, index.. ). Example : code for a navbar can be put in a partial file so we do not have to write it in every html file (show, index, edit ...).
 
 ### Self Assessment:
 Choose One:
-* I was able to answer every question without relying on outside resources
+
 * I was able to answer most questions independently, but utilized outside resources for a few
-* I was able to answer a few questions independently, but relied heavily on outside resources
 
 Choose One:
-* I feel confident about the content presented this week
+
 * I feel comfortable with the content presented this week
 * I feel overwhelmed by the content presented this week
-* I feel quite lost by the content presented this week
+A little of both.
